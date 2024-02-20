@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:todo_app/feature/home_screen/home_screen.dart';
 import 'package:todo_app/firebase_options.dart';
+import 'package:todo_app/feature/inboarding/inboard.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,11 +18,12 @@ class ToDoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Home"),
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      initialRoute: FoochiOnboardingView.routeName,
+      routes: {
+        FoochiOnboardingView.routeName: (context) => FoochiOnboardingView(),
+        HomeScreen.routeName: (context) => HomeScreen(),
+      },
     );
   }
 }
