@@ -1,5 +1,9 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/material.dart';
+import 'package:todo_app/feature/add_task/add_task.dart';
+import 'package:todo_app/utils/app_assests.dart';
 import 'package:todo_app/utils/app_colors.dart';
 import 'package:todo_app/utils/app_text_style.dart';
 
@@ -34,12 +38,23 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var siz = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppColors.kBackground,
+      appBar: AppBar(
+        backgroundColor: AppColors.kBackground,
+        title: Text(
+          "${months[currentMonth - 1]} ${DateTime.now().day},${DateTime.now().year}",
+          style: AppTextStyle.textStyle24,
+        ),
+      ),
       floatingActionButton: Padding(
         padding: const EdgeInsets.all(15),
         child: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            // Navigator.of(context).pushNamed(AddTask.routeName);
+            bottomSheet();
+          },
           backgroundColor: Color(0xff8687E7),
           child: Icon(
             Icons.add,
@@ -50,13 +65,6 @@ class _HomeScreenState extends State<HomeScreen> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(1000),
           ),
-        ),
-      ),
-      appBar: AppBar(
-        backgroundColor: AppColors.kBackground,
-        title: Text(
-          "${months[currentMonth - 1]} ${DateTime.now().day},${DateTime.now().year}",
-          style: AppTextStyle.textStyle24,
         ),
       ),
       body: Container(
@@ -91,10 +99,33 @@ class _HomeScreenState extends State<HomeScreen> {
                 inactiveDayNumStyle:
                     TextStyle(color: Colors.white, fontSize: 20),
               ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              height: siz.height * .5,
+              width: siz.width * .5,
+              decoration: BoxDecoration(),
+              child: Image.asset(AppAssets.backgroundHS),
             )
           ],
         ),
       ),
+    );
+  }
+
+  void bottomSheet() {
+    showModalBottomSheet(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(50),
+          topRight: Radius.circular(50),
+        ),
+      ),
+      context: context,
+      builder: (context) => AddTask(),
     );
   }
 }

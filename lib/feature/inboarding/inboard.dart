@@ -54,7 +54,8 @@ class _FoochiOnboardingViewState extends State<FoochiOnboardingView> {
               width: 130,
               onTap: () {
                 if (currentIndex == (onboardingList.length - 1)) {
-                  Navigator.of(context).pushNamed(HomeScreen.routeName);
+                  Navigator.of(context)
+                      .pushReplacementNamed(HomeScreen.routeName);
                 } else {
                   pageController.nextPage(
                     duration: const Duration(milliseconds: 500),
