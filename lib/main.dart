@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:todo_app/feature/add_task/add_task.dart';
 import 'package:todo_app/feature/home_screen/home_screen.dart';
 import 'package:todo_app/firebase_options.dart';
 import 'package:todo_app/feature/inboarding/inboard.dart';
@@ -23,6 +24,7 @@ class ToDoApp extends StatelessWidget {
       routes: {
         FoochiOnboardingView.routeName: (context) => FoochiOnboardingView(),
         HomeScreen.routeName: (context) => HomeScreen(),
+        AddTask.routeName: (context) => AddTask(),
       },
     );
   }
