@@ -2,19 +2,19 @@ import 'package:animate_do/animate_do.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:todo_app/feature/home_screen/home_screen.dart';
-import 'package:todo_app/utils/app_assests.dart';
-import 'package:todo_app/utils/app_colors.dart';
+import 'package:todo_app/src/feature/home_screen/home_screen.dart';
+import 'package:todo_app/src/utils/app_assests.dart';
+import 'package:todo_app/src/utils/app_colors.dart';
 
-class FoochiOnboardingView extends StatefulWidget {
-  static const String routeName = "FoochiOnboardingView";
-  const FoochiOnboardingView({super.key});
+class FochOnboardingView extends StatefulWidget {
+  static const String routeName = "FochOnboardingView";
+  const FochOnboardingView({super.key});
 
   @override
-  State<FoochiOnboardingView> createState() => _FoochiOnboardingViewState();
+  State<FochOnboardingView> createState() => _FochOnboardingViewState();
 }
 
-class _FoochiOnboardingViewState extends State<FoochiOnboardingView> {
+class _FochOnboardingViewState extends State<FochOnboardingView> {
   PageController pageController = PageController();
   int currentIndex = 0;
 
@@ -139,7 +139,7 @@ class _CustomOutlinedButtonState extends State<CustomOutlinedButton>
         ),
         child: Card(
           elevation: 0,
-          color: Color(0xff8875FF),
+          color: const Color(0xff8875FF),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(100),
           ),
