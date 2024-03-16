@@ -37,8 +37,8 @@ class CustomTaskWidget extends StatelessWidget {
           children: [
             SlidableAction(
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(10),
-                bottomLeft: Radius.circular(10),
+                topLeft: Radius.circular(5),
+                bottomLeft: Radius.circular(5),
               ),
               onPressed: (context) {
                 FirebaseUtils.deleteTaskFromFirestore(taskModel)
@@ -57,8 +57,10 @@ class CustomTaskWidget extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
-              topRight: Radius.circular(10),
-              bottomRight: Radius.circular(10),
+              topRight: Radius.circular(5),
+              bottomRight: Radius.circular(5),
+              bottomLeft: Radius.circular(5),
+              topLeft: Radius.circular(5),
             ),
             color: Colors.amber,
           ),
