@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:todo_app/app.dart';
 import 'package:todo_app/src/feature/home_screen/home_screen.dart';
 import 'package:todo_app/src/utils/app_assests.dart';
 import 'package:todo_app/src/utils/app_colors.dart';
@@ -54,8 +55,7 @@ class _FochOnboardingViewState extends State<FochOnboardingView> {
               width: 130,
               onTap: () {
                 if (currentIndex == (onboardingList.length - 1)) {
-                  Navigator.of(context)
-                      .pushReplacementNamed(HomeScreen.routeName);
+                  Navigator.of(context).pushReplacementNamed(App.routeName);
                 } else {
                   pageController.nextPage(
                     duration: const Duration(milliseconds: 500),

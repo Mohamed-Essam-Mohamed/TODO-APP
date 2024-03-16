@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, avoid_single_cascade_in_expression_statements
 
 import 'package:animate_do/animate_do.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -105,6 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 initialDate: DateTime.now(),
                 onDateChange: (selectedDate) {
                   //`selectedDate` the new date selectedDate
+                  provider.changDate(selectedDate);
                 },
                 activeColor: const Color(0xff242969),
                 headerProps: const EasyHeaderProps(
@@ -143,7 +144,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: ListView.separated(
                   shrinkWrap: true,
                   itemBuilder: (context, index) => CustomTaskWidget(
-                      siz: siz, taskModel: provider.taskModelList[index]),
+                    siz: siz,
+                    taskModel: provider.taskModelList[index],
+                  ),
                   // Text(
                   //   provider.taskModelList[index].title ?? '',
                   //   style: TextStyle(

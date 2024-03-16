@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:todo_app/src/utils/app_colors.dart';
 import 'package:todo_app/src/utils/app_text_style.dart';
 
-class AppTextFormField extends StatelessWidget {
+class CustomTextFormField extends StatelessWidget {
   String? Function(String?)? validator;
   void Function(String)? onChanged;
   String hintText;
   Size siz;
-  AppTextFormField(
+  CustomTextFormField(
       {required this.validator,
       required this.onChanged,
       required this.siz,

@@ -8,7 +8,7 @@ import 'package:todo_app/src/provider/provider_list.dart';
 
 import 'package:todo_app/src/utils/app_colors.dart';
 import 'package:todo_app/src/utils/app_text_style.dart';
-import 'package:todo_app/src/widget/app_text_form_field.dart';
+import 'package:todo_app/src/widget/custom_text_form_field.dart';
 
 class AddTask extends StatefulWidget {
   static const String routeName = "AddTask";
@@ -67,7 +67,7 @@ class _AddTaskState extends State<AddTask> {
                     SizedBox(
                       height: siz.height * 0.01,
                     ),
-                    AppTextFormField(
+                    CustomTextFormField(
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Can\'t be empty';
@@ -95,7 +95,7 @@ class _AddTaskState extends State<AddTask> {
                     SizedBox(
                       height: siz.height * .01,
                     ),
-                    AppTextFormField(
+                    CustomTextFormField(
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Can\'t be empty';
